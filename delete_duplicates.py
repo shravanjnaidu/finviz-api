@@ -1,5 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv("screener_data.csv")
+path = "dailyreports/screener_data.csv"
+data = pd.read_csv(path)
 data.drop_duplicates(subset="Ticker", keep='first', inplace=True)
-data.to_csv("screener_data.csv")
+data.to_csv(path)

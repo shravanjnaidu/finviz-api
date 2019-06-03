@@ -4,6 +4,8 @@ import os
 import glob
 import pandas as pd
 
+path = "/Users/shravannaidu/finviz-api/dailyreports/"
+
 def scrap_finviz(strategyNum, *url):
     from urllib.request import urlopen
     from bs4 import BeautifulSoup
@@ -93,12 +95,11 @@ def scrap_finviz(strategyNum, *url):
     # save as csv file
     df.to_csv('/Users/shravannaidu/projects/Finviz-Data-Scrap-master' + str(strategyNum) + '.csv', index=False)
     sorted_list = pd.read_csv('/Users/shravannaidu/projects/Finviz-Data-Scrap-master' + str(strategyNum) + '.csv',nrows=5)
-    sorted_list.to_csv('/Users/shravannaidu/projects/DailyTopGainers/' + str(strategyNum) + '.csv', index=False)
+    sorted_list.to_csv(path + str(strategyNum) + '.csv', index=False)
     return df
 
-
 timestr = time.strftime("%Y-%m-%d_%H%M")
-os.chdir("/Users/shravannaidu/projects/DailyTopGainers/")
+os.chdir(path)
 
 scrap_finviz(timestr)
 
