@@ -22,7 +22,7 @@ def scrap_finviz(strategyNum, *url):
     # else use default url
     else:
         # input hard coded url here
-        finviz_url = "http://finviz.com/screener.ashx?v=111&s=ta_topgainers&f=sh_curvol_o500,sh_price_0.5to20"
+        finviz_url = "https://finviz.com/screener.ashx?v=111&f=sh_curvol_o500,sh_price_u15&ft=4&o=-change"
         page = urlopen(finviz_url)
 
     hasNextPage = True
