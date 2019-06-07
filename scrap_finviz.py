@@ -93,9 +93,9 @@ def scrap_finviz(strategyNum, *url):
     # time taken to retrieve data
     print('Time taken to draw data: ' + str(round(time.time() - start_time, 2)) + ' seconds')
     # save as csv file
-    df.to_csv(path + str(strategyNum) + '.csv', index=False)
-    sorted_list = pd.read_csv(path + str(strategyNum) + '.csv',nrows=5)
-    sorted_list.to_csv(path + str(strategyNum) + '.csv', index=False)
+    df.to_csv(path + '_' + str(strategyNum) + '.csv', index=False)
+    sorted_list = pd.read_csv(path + '_' + str(strategyNum) + '.csv',nrows=5)
+    sorted_list.to_csv(path + '_' + str(strategyNum) + '.csv', index=False)
     return df
 
 
