@@ -1,6 +1,6 @@
 # Project Title 
 
-Finviz Data Scrap for Python 3.6. This is my first non-academic related program that I have written to allow users to specifically draw data from Finviz's top gainers page, and export the data into a csv file. Do note that this API only works for scraping data on one page of Finviz's website.'Hope this is of use to some people out there. 
+Finviz Data Scrap for Python 3.6. I have written to allow users to specifically draw data from Finviz's top gainers page, and export the data into a csv file. Do note that this API only works for scraping data on one page of Finviz's website.'Hope this is of use to some people out there. 
 
 # Prerequisites 
 

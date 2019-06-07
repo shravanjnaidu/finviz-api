@@ -1,6 +1,8 @@
 import csv
 import pandas as pd
+import os
 
+os.system('python3 scrap_finviz.py')
 path = "dailyreports/screener_data.csv"
 f=pd.read_csv(path)
 keep_col = ['Ticker']
@@ -14,3 +16,5 @@ with open(path) as f:
   with open(path, 'w') as t:
      write = csv.writer(t)
      write.writerows(new_data)
+
+
