@@ -3,7 +3,9 @@ import pandas as pd
 import os
 
 os.system('python3 scrap_finviz.py')
-path = "dailyreports/screener_data.csv"
+# path = "dailyreports/screener_data.csv"
+home = os.getenv("HOME")
+path = home + "/finviz-api/dailyreports/screener_data.csv"
 f=pd.read_csv(path)
 keep_col = ['Ticker']
 new_f = f[keep_col]
@@ -16,5 +18,4 @@ with open(path) as f:
   with open(path, 'w') as t:
      write = csv.writer(t)
      write.writerows(new_data)
-
 

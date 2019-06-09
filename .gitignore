@@ -1,4 +1,4 @@
 __pycache__
 dailyreports/*.csv
-.DS_Store
+./.DS_Store
 

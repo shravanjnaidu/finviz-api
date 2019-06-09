@@ -4,7 +4,9 @@ import os
 import glob
 import pandas as pd
 
-path = "dailyreports"
+home = os.getenv("HOME")
+path = home + "/finviz-api/dailyreports"
+# path = "dailyreports"
 
 def scrap_finviz(strategyNum, *url):
     from urllib.request import urlopen
@@ -93,9 +95,9 @@ def scrap_finviz(strategyNum, *url):
     # time taken to retrieve data
     print('Time taken to draw data: ' + str(round(time.time() - start_time, 2)) + ' seconds')
     # save as csv file
-    df.to_csv(path + '_' + str(strategyNum) + '.csv', index=False)
-    sorted_list = pd.read_csv(path + '_' + str(strategyNum) + '.csv',nrows=5)
-    sorted_list.to_csv(path + '_' + str(strategyNum) + '.csv', index=False)
+    df.to_csv("TopRunners" + '_' + str(strategyNum) + '.csv', index=False)
+    sorted_list = pd.read_csv("TopRunners" + '_' + str(strategyNum) + '.csv',nrows=5)
+    sorted_list.to_csv("TopRunners" + '_' + str(strategyNum) + '.csv', index=False)
     return df
 
 
