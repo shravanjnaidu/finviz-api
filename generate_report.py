@@ -2,9 +2,8 @@ import csv
 import pandas as pd
 import os
 
-os.system('python3 scrap_finviz.py')
-# path = "dailyreports/screener_data.csv"
 home = os.getenv("HOME")
+os.system('python3 ' + home + '/finviz-api/scrap_finviz.py')
 path = home + "/finviz-api/dailyreports/screener_data.csv"
 f=pd.read_csv(path)
 keep_col = ['Ticker']
