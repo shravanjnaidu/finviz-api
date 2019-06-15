@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stock Market News & Blogs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+                         <meta name="viewport" content="width=1024"><meta name="description" content="Stock screener for investors and traders, financial visualizations.">
+<meta name="keywords" content="Stock Screener, Charts, Quotes, Maps, News, Financial Visualizations, Research, Trading Systems">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Refresh" content="3600">
+<link href="//fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" type="text/css"><link rel="stylesheet" href="/css/finviz.css?rev=114" type="text/css">
+<link rel="icon" type="image/png" href="/favicon_2x.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon.png" sizes="16x16">
+
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]--><script type="text/javascript">FinvizSettings = {hasUserPremium: false, name: ""};</script><script src="/script/boxover.js?rev=134" type="text/javascript"></script>
+<script src="/script/lightup.js?rev=134" type="text/javascript"></script>
+<script type="text/javascript" src="/js/libs/shims.min.js?rev=134"></script><script type="text/javascript" src="/js/libs/d3-json.js"></script>
+            <script src="script/ajax.js" type="text/javascript"></script>
+            <script src="script/refresh.js?v=1" type="text/javascript"></script>
+            <script src="script/news.js?v=6" type="text/javascript"></script>
+        </head>
+<body class="" style="margin:0" bgcolor="#ffffff"><div id="unsupported-browser">Your browser is no longer supported. Please, <a href="https://whatbrowser.org/" target="_blank">upgrade your browser.</a></div>
+                <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" style="min-width: 1000px">
+                    <tr valign="top">
+                        <td>
+                            <script type="text/javascript">if(document.body.clientWidth>1500){document.write('<table align="center" width="1425px" cellpadding="0" cellspacing="0" border="0" style="table-layout: fixed; min-width: 1000px">')}else{document.write('<table align="center" width="95%" style="max-width: 1425px; min-width: 1000px; table-layout: fixed" cellpadding="0" cellspacing="0" border="0">')}</script>
+                                <tr>
+                                    <td width="30%">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td height="50" valign="middle">
+                                                    <a href="/" class="logo"></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="search" id="search" style="padding-top: 4px">
+                                                    <form style="margin: 0">
+                                                        <input placeholder="Search ticker, company or profile" type="text" value="">
+                                                        <span class="fa fa-search"></span>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="bottom" style="padding-bottom: 4px">
+                                        <div id="microbar_position" style="height: 31px"></div>
+                                    </td>
+                                    <td width="728" align="right" style="position:relative;"><div id="banner_position" style="position:absolute;right:0;top:0;overflow:hidden;height:96px"></div></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="1000" style="font-size:0">
+                            <img src="/gfx/nic2x2.gif" width="1000" height="1" border="0">
+                        </td>
+                    </tr>
+                </table>
+            <table class="navbar" width="100%" height="30" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td height="30">
+                        <script type="text/javascript">if(document.body.clientWidth>1500){document.write('<table align="center" width="1425px" cellpadding="0" cellspacing="0" border="0" style="white-space: nowrap; min-width: 1000px">')}else{document.write('<table align="center" width="95%" style="max-width:1425px;white-space: nowrap;min-width: 1000px" cellpadding="0" cellspacing="0" border="0">')}</script>
+                            <tr height="30"><td><a class="nav-link  is-first" href="/">Home</a></td><td><a class="nav-link is-active" href="/news.ashx">News</a></td><td><a class="nav-link " href="/screener.ashx">Screener</a></td><td><a class="nav-link " href="/map.ashx">Maps</a></td><td><a class="nav-link " href="/groups.ashx">Groups</a></td><td><a class="nav-link " href="/portfolio.ashx">Portfolio</a></td><td><a class="nav-link " href="/insidertrading.ashx">Insider</a></td><td><a class="nav-link " href="/futures.ashx">Futures</a></td><td><a class="nav-link " href="/forex.ashx">Forex</a></td><td><a class="nav-link " href="/crypto.ashx">Crypto</a></td><td><a class="nav-link " href="/backtests.ashx">Backtests</a></td><td><a class="nav-link  is-elite" href="/elite.ashx">Elite</a></td><td style="width: 100%"></td>
+                                <td class="time" id="time"></td>
+                <td>
+                    <a href="/help/screener.ashx" class="nav-link is-help">
+                        <span class="fa fa-question-circle"></span>
+                        Help
+                    </a>
+                </td>
+                <td><a href="/login.ashx" class="nav-link sign-in">Login</a></td>
+                <td><a href="/register.ashx" class="nav-link sign-up">Register</a></td>
+            
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        <div class="content "><div class="container">
+        <div class="news" id="news">
+            <a href="javascript:void(0)" class="news_favorite-blog nn-tab-link" onclick="NewsSuggestUrlPrompt();return false;">
+                Missing your favorite blog here?
+            </a>
+
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td align="center" valign="top" width="49%">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" valign="middle">
+                                    <span class="nn-title">NEWS</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="2%"><img src="gfx/nic2x2.gif" alt="" border="0" height="27" width="100%"></td>
+                    <td align="center" valign="top" width="49%">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="30%"><img src="gfx/nic2x2.gif" alt="" border="0" height="27" width="100%"></td>
+                                <td align="center" valign="middle" width="40%"><span class="nn-title">BLOGS</span></td>
+                                <td width="30%" align="right" valign="middle">
+                                    <select id="newsView" class="portfolio-combo" onchange='window.location=document.getElementById("newsView").value'>
+                                        <option value="news.ashx" selected="selected">View by Time</option>
+                                        <option value="news.ashx?v=2">View by Source</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/pjdTmR7kvnc/trump-leaves-china-tariff-deadline-open-calls-relationship-testy-idUSKCN1TD24O','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:36PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>U.S. President Donald Trump declined to set a deadline on Wednesday for levying tariffs on another $325 billion of Chinese goods and called the relationship with Beijing good but 'testy' after China walked back commitments for a trade deal.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/pjdTmR7kvnc/trump-leaves-china-tariff-deadline-open-calls-relationship-testy-idUSKCN1TD24O" target="_blank" class="nn-tab-link">Trump leaves China tariff deadline open, calls relationship 'testy'</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/e6dxhJJe3jk/republican-senator-criticizes-potential-dual-u-s-antitrust-tech-probes-idUSKCN1TD2RN','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:31PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The Republican chairman of the Senate's antitrust panel criticized plans by the Justice Department and Federal Trade Commission to potentially investigate four of the biggest U.S. tech firms.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/e6dxhJJe3jk/republican-senator-criticizes-potential-dual-u-s-antitrust-tech-probes-idUSKCN1TD2RN" target="_blank" class="nn-tab-link">Republican senator criticizes potential dual U.S. antitrust tech probes</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/GT2spFx8XNQ/trump-confident-hong-kong-and-china-will-work-things-out-after-protests-idUSKCN1TD23H','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:23PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>U.S. President Donald Trump said on Wednesday he was sure China and Hong Kong would be able to 'work things out' after mass protests in the city against an extradition bill that would allow people to be sent to mainland China for trial.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/GT2spFx8XNQ/trump-confident-hong-kong-and-china-will-work-things-out-after-protests-idUSKCN1TD23H" target="_blank" class="nn-tab-link">Trump confident Hong Kong and China will 'work things out' after protests</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/YjL4F9fRSHA/hong-kong-police-fire-rubber-bullets-as-extradition-bill-protests-turn-to-chaos-idUSKCN1TC1WR','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:23PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Hong Kong police fired rubber bullets and tear gas at demonstrators who threw plastic bottles on Wednesday as protests against an extradition bill that would allow people to be sent to mainland China for trial descended into violent chaos.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/YjL4F9fRSHA/hong-kong-police-fire-rubber-bullets-as-extradition-bill-protests-turn-to-chaos-idUSKCN1TC1WR" target="_blank" class="nn-tab-link">Hong Kong police fire rubber bullets as extradition bill protests turn to chaos</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={5F3B6C3E-8D56-11E9-9E3A-1A62F5FBCEEC}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:17PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Facebook Inc. uncovered emails that appear to connect Chief Executive Mark Zuckerberg to potentially problematic privacy practices at the company, according to people familiar with the matter.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={5F3B6C3E-8D56-11E9-9E3A-1A62F5FBCEEC}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">The Wall Street Journal: Internal emails could show Mark Zuckerberg knew about Facebook’s questionable privacy practices</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/khAWXUN-vfk/walmart-overhauls-jet-com-as-online-business-fails-to-deliver-results-idUSKCN1TD2PS','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:09PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Walmart Inc on Wednesday announced a sweeping overhaul at Jet.com, an e-commerce retailer it acquired in 2016 for $3.3 billion, and said it no longer needs a dedicated leader to run the online business.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/khAWXUN-vfk/walmart-overhauls-jet-com-as-online-business-fails-to-deliver-results-idUSKCN1TD2PS" target="_blank" class="nn-tab-link">Walmart overhauls Jet.com as online business fails to deliver results</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/j370gUb1a9k/huawei-asks-verizon-to-pay-over-1-billion-for-over-230-patents-source-idUSKCN1TD218','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:04PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Huawei Technologies Co Ltd has told Verizon Communications Inc that the U.S. carrier should pay licensing fees for more than 230 of the Chinese telecoms equipment maker's patents and in aggregate is seeking more than $1 billion, a person briefed on t...</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/j370gUb1a9k/huawei-asks-verizon-to-pay-over-1-billion-for-over-230-patents-source-idUSKCN1TD218" target="_blank" class="nn-tab-link">Huawei asks Verizon to pay over $1 billion for over 230 patents: source</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/us-expected-to-end-trade-war-before-it-leads-to-trump-recession.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:02PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>J.P. Morgan&#039;s head quant said a U.S.-China trade deal could head off a &quot;Trump recession&quot; and ignite a powerful rally in value and high beta stocks.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/us-expected-to-end-trade-war-before-it-leads-to-trump-recession.html" target="_blank" class="nn-tab-link">The US is more likely to end the trade war than face a 'Trump recession,' JP Morgan's top quant says</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/_9HrgANZUtI/huawei-fights-to-keep-u-s-funds-flowing-to-its-rural-mobile-customers-idUSKCN1TD2PE','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:01PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>China's Huawei Technologies Co Ltd, the world's biggest telecoms equipment maker, argued on Wednesday that Washington should scrap plans to prohibit wireless companies from using U.S. government funds to buy Huawei gear for their networks.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/_9HrgANZUtI/huawei-fights-to-keep-u-s-funds-flowing-to-its-rural-mobile-customers-idUSKCN1TD2PE" target="_blank" class="nn-tab-link">Huawei fights to keep U.S. funds flowing to its rural mobile customers</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={6A6F8927-1AB1-48D8-A02A-5E10DE763409}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:00PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Investors want another helping of Beyond Meat Inc. stock, with shares up another 12.6% in Wednesday trading, but the competition in the plant-based and meat-alternative categories could take a bite out Beyond Meat’s stratospheric growth.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={6A6F8927-1AB1-48D8-A02A-5E10DE763409}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">NewsWatch: Beyond Meat at risk as competitors like Impossible Burger take root</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={7E09C1C4-8D15-11E9-9077-43F4377D705A}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:44PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>When it comes to the U.S.-China trade fight, bond traders are too pessimistic, stock traders are too optimistic, and currency traders are too complacent, say analysts at Bank of America Merrill Lynch.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={7E09C1C4-8D15-11E9-9077-43F4377D705A}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">In One Chart: Why optimistic stock-market investors and pessimistic bond traders might both be wrong about the U.S.-China trade war</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={34B5982E-8C7D-11E9-A21A-57C199C4DF25}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:38PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Schwab fixed-income strategist says low economic growth, demographics will keep rates down, writes Howard Gold.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={34B5982E-8C7D-11E9-A21A-57C199C4DF25}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">Howard Gold's No-Nonsense Investing: Bond guru who called interest rate top in 2018 now says yields could fall further</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/c3uKrsZx9fg/oil-tumbles-on-demand-worries-stocks-hit-by-trade-economic-fears-idUSKCN1TD036','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:37PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Oil prices slid 4% on Wednesday on higher U.S. crude inventories and a bleaker demand outlook, while uncertainty over the U.S.-China trade war and U.S. economic data weighed on stocks.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/c3uKrsZx9fg/oil-tumbles-on-demand-worries-stocks-hit-by-trade-economic-fears-idUSKCN1TD036" target="_blank" class="nn-tab-link">Oil tumbles on demand worries; stocks hit by trade, economic fears</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={7F993C5A-8CFB-11E9-9077-43F4377D705A}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:37PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The Dow Jones Industrial Average finish lower for a second day in a row after reading on May consumer inflation and continued U.S.-China trade uncertainty.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={7F993C5A-8CFB-11E9-9077-43F4377D705A}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">Market Snapshot: Dow logs first back-to-back loss in June as investors focus on U.S.-China trade</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/8pLxfecKikw/wall-st-slips-banks-fall-with-prospect-of-rate-cut-energy-drops-idUSKCN1TD1GC','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:32PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Wall Street ended down slightly on Wednesday, with bank stocks declining as prospects of a U.S. interest rate cut rose and energy shares tumbling along with oil prices.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/8pLxfecKikw/wall-st-slips-banks-fall-with-prospect-of-rate-cut-energy-drops-idUSKCN1TD1GC" target="_blank" class="nn-tab-link">Wall St. slips; banks fall with prospect of rate cut, energy drops</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feeds.reuters.com/~r/reuters/businessNews/~3/0a6trQsIGq4/pompeo-to-push-in-india-for-more-u-s-access-to-local-markets-idUSKCN1TD2NA','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/3.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:30PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The United States is open to dialogue to resolve trade differences with India by allowing Americans companies more access to Indian markets, U.S. Secretary of State Mike Pompeo said on Wednesday ahead of a visit to New Delhi later this month.</td></tr></table>] delay=[100]"><a href="http://feeds.reuters.com/~r/reuters/businessNews/~3/0a6trQsIGq4/pompeo-to-push-in-india-for-more-u-s-access-to-local-markets-idUSKCN1TD2NA" target="_blank" class="nn-tab-link">Pompeo to push in India for more U.S. access to local markets</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={6CC5AD52-8D46-11E9-9077-43F4377D705A}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:26PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Investors want another helping of Beyond Meat Inc. stock, with shares up another 12.6% in Wednesday trading, but the competition in the plant-based and meat-alternative categories could take a bite out Beyond Meat’s stratospheric growth.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={6CC5AD52-8D46-11E9-9077-43F4377D705A}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">Beyond Meat at risk as competitors like Impossible Burger take root</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={7D2F95C6-8D1A-11E9-8272-E1522E78C1DB}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:14PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Before he turned 19, bitcoin bets made Erik Finman a millionaire. Now, the crypto wunderkind says he wants to create a platform for investing in cryptocurrencies that is easy for average folks to use.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={7D2F95C6-8D1A-11E9-8272-E1522E78C1DB}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">Cryptos: A 20-year-old bitcoin millionaire is determined to create the ‘Acorns of crypto’</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={DC198E68-8C7D-11E9-A21A-57C199C4DF25}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:12PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Looking for the best bug spray? Here are 3 of the best insect repellents</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={DC198E68-8C7D-11E9-A21A-57C199C4DF25}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">Buy This, Not That: Why this effective $9 insect repellent scores nearly 3,000 rave reviews on Amazon</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/beyond-meat-is-rocking-despite-negative-analyst-moves-this-week-surging-17percent.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:01PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Shares of alternative meat company Beyond Meat rose more than 17% on Wednesday despite being downgraded by J.P. Morgan and Bernstein this week.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/beyond-meat-is-rocking-despite-negative-analyst-moves-this-week-surging-17percent.html" target="_blank" class="nn-tab-link">Beyond Meat is rocking despite negative analyst moves this week, surges 12%</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={2AF763E0-8D21-11E9-8272-E1522E78C1DB}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:41PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>President Donald Trump on Wednesday said he doesn’t have a deadline for imposing extra tariffs on Chinese goods, as he announced an agreement for U.S. troops to be sent to Poland.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={2AF763E0-8D21-11E9-8272-E1522E78C1DB}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">Trump Today: Trump Today: President says there’s no deadline for imposing China tariffs as he announces military deal with Poland</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://www.marketwatch.com/news/story.asp?guid={3EC7D732-8C55-11E9-834D-26861FDF65FB}&siteid=rss&rss=1','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/1.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:19PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Quick, what’s the best performing sector in the S&P 500 so far in June? No, it isn’t the highflying information technology sector — that’s second best.</td></tr></table>] delay=[100]"><a href="http://www.marketwatch.com/news/story.asp?guid={3EC7D732-8C55-11E9-834D-26861FDF65FB}&siteid=rss&rss=1" target="_blank" class="nn-tab-link">Market Extra: This S&P 500 sector is having its best month in about 4 years, trouncing tech stocks</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/stocks-making-the-biggest-moves-midday-mattel-crowdstrike-dave-busters.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">02:10PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Names on the move ahead of the open.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/stocks-making-the-biggest-moves-midday-mattel-crowdstrike-dave-busters.html" target="_blank" class="nn-tab-link">Stocks making the biggest moves midday: Mattel, CrowdStrike, Dave & Buster's</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/health/insurance-lawsuit-obamacare.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">01:26PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>A lawsuit accuses Health Insurance Innovations of defrauding consumers who were misled into buying plans that left them with thousands of dollars in medical bills.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/health/insurance-lawsuit-obamacare.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">Florida Company Sued Over Sales of Skimpy Health Plans</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/tudor-jones-says-next-round-of-china-tariffs-could-tip-us-into-a-recession.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">12:44PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Paul Tudor Jones believes the market is underestimating the economic impact of tariffs.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/tudor-jones-says-next-round-of-china-tariffs-could-tip-us-into-a-recession.html" target="_blank" class="nn-tab-link">Tudor Jones says next round of China tariffs could tip us into a recession</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/business/social-security-shortfall-2020.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">12:21PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Unless Congress and the White House act, nearly every older American will be affected. The math of retirement planning is already changing.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/business/social-security-shortfall-2020.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">Social Security Is Staring at Its First Real Shortfall in Decades. Big Cuts Could Follow.</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/business-48614704','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">12:14PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The Explorer sport utility vehicle is being recalled over suspension issues which could affect steering.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/business-48614704" target="_blank" class="nn-tab-link">Ford recalls 1.2 million vehicles in US over suspension fault</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/business-48524850','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">11:59AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The rescue of Sir Philip Green's retail empire will come at the cost of shops and jobs.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/business-48524850" target="_blank" class="nn-tab-link">Green secures rescue deal for Topshop empire</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/business-48611754','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">11:38AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Less that 10% of firms have applied to a HMRC scheme aimed at facilitating UK imports, Newsnight reveals.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/business-48611754" target="_blank" class="nn-tab-link">Brexit: UK firms 'not even close to ready' for no deal</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/business/economy/federal-reserve-rates-employ-america.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">11:30AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Sam Bell and his colleagues at Employ America want the central bank to cut interest rates now, and to lift them less quickly after the next recession, to create more jobs.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/business/economy/federal-reserve-rates-employ-america.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">Trump Isn’t Alone. These Millennials on the Left Want Low Interest Rates, Too.</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/business/seatbelts-back-seat-safety.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">11:27AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Researchers have new recommendations for where to sit (in the front, for adults; kids still get the back) and what features to look for.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/business/seatbelts-back-seat-safety.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">The Safest Place in a Car Crash Isn’t the Back Seat Anymore</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/us/martin-feldstein-dead.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">10:55AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>He took a leave from Harvard to be chairman of the Council of Economic Advisers and, as a deficit hawk, never shied from challenging his White House colleagues.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/us/martin-feldstein-dead.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">Martin Feldstein, a Chief Economist Under Reagan, Dies at 79</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/aramco-set-to-peel-back-financial-veil-with-august-earnings-call?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">10:52AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Aramco to Peel Back Financial Veil With August Earnings Call</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/aramco-set-to-peel-back-financial-veil-with-august-earnings-call?srnd=markets-vp" target="_blank" class="nn-tab-link">Aramco to Peel Back Financial Veil With August Earnings Call</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/symphony-the-start-up-taking-on-bloomberg-is-now-worth-1point4-billion.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">10:35AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The messaging platform for Wall Street firms, is backed by more than a dozen of the world&#039;s biggest financial players.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/symphony-the-start-up-taking-on-bloomberg-is-now-worth-1point4-billion.html" target="_blank" class="nn-tab-link">Symphony, the start-up taking on Bloomberg, is now worth $1.4 billion</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/high-interest-lenders-up-40-even-as-home-flipping-trend-weakens?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">10:30AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Home-Flipping Trend Weakens as High-Interest Lenders Jump 40%</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/high-interest-lenders-up-40-even-as-home-flipping-trend-weakens?srnd=markets-vp" target="_blank" class="nn-tab-link">Home-Flipping Trend Weakens as High-Interest Lenders Jump 40%</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/kenya-s-biggest-bank-said-to-plan-ethiopia-hub-as-sector-opens?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">10:17AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Kenya’s Biggest Bank Said to Plan Ethiopia Hub as Sector Opens</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/kenya-s-biggest-bank-said-to-plan-ethiopia-hub-as-sector-opens?srnd=markets-vp" target="_blank" class="nn-tab-link">Kenya’s Biggest Bank Said to Plan Ethiopia Hub as Sector Opens</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/your-first-trade-for-wednesday-june-12.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">09:52AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The &quot;Fast Money&quot; traders share their first moves for the market open.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/your-first-trade-for-wednesday-june-12.html" target="_blank" class="nn-tab-link">Your first trade for Wednesday, June 12</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/dave-buster-s-sales-miss-rattles-analysts-and-fuels-downgrades?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">09:48AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Dave & Buster's Hits Year Low as Poor Sales Rattle Analysts</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/dave-buster-s-sales-miss-rattles-analysts-and-fuels-downgrades?srnd=markets-vp" target="_blank" class="nn-tab-link">Dave & Buster's Hits Year Low as Poor Sales Rattle Analysts</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/technology-48609747','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">09:34AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The firm said it was unable to manufacture a planned laptop because the US had put it on a blacklist.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/technology-48609747" target="_blank" class="nn-tab-link">Huawei cancels laptop launch because of US trade blacklist</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/caracas-is-suddenly-attracting-a-migration-wave-of-its-own?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">09:30AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Caracas Is Suddenly Attracting a Migration Wave of Its Own</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/caracas-is-suddenly-attracting-a-migration-wave-of-its-own?srnd=markets-vp" target="_blank" class="nn-tab-link">Caracas Is Suddenly Attracting a Migration Wave of Its Own</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/paul-tudor-jones-says-it-s-time-for-first-rate-cut-101-trades?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">09:03AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Paul Tudor Jones Says Buy Stocks on Prospect of Market Highs</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/paul-tudor-jones-says-it-s-time-for-first-rate-cut-101-trades?srnd=markets-vp" target="_blank" class="nn-tab-link">Paul Tudor Jones Says Buy Stocks on Prospect of Market Highs</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/in-ethical-investments-porn-is-a-bigger-taboo-than-firearms?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:57AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>In Ethical Investments, Porn Is a Bigger Taboo Than Firearms</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/in-ethical-investments-porn-is-a-bigger-taboo-than-firearms?srnd=markets-vp" target="_blank" class="nn-tab-link">In Ethical Investments, Porn Is a Bigger Taboo Than Firearms</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/technology/personaltech/in-new-york-asking-what-australians-want.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:56AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>What are Times readers hungriest for? Here’s how Jodi Rudoren, associate managing editor for audience, finds out and then works to serve them.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/technology/personaltech/in-new-york-asking-what-australians-want.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">‘Oversharing’ on Google Calendar, and Making Sure Readers Come Back for More</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/americas-retirement-accounts-are-growing-but-not-fast-enough.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:26AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The average account value for an investor age 65 and older was $192,877.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/americas-retirement-accounts-are-growing-but-not-fast-enough.html" target="_blank" class="nn-tab-link">America's retirement accounts are growing, but not fast enough</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/chime-has-quadrupled-its-customer-base-to-4-million-in-a-single-year.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:26AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Big banks have talked about the threat from tech-powered upstarts for years, but it&#039;s only recently that online banks like Chime have begun to make inroads.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/chime-has-quadrupled-its-customer-base-to-4-million-in-a-single-year.html" target="_blank" class="nn-tab-link">This branchless bank quadrupled its customer base to 4 million in a single year</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/stocks-making-the-biggest-moves-premarket-dave-busters-entertainment-tesla-mattel-more.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:26AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Names on the move ahead of the open.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/stocks-making-the-biggest-moves-premarket-dave-busters-entertainment-tesla-mattel-more.html" target="_blank" class="nn-tab-link">Stocks making the biggest moves premarket: Dave & Buster's Entertainment, Tesla, Mattel & more</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.cnbc.com/2019/06/12/ubs-says-no-rate-cut-coming-soon-despite-what-the-market-thinks.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/10.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:26AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>UBS joined Goldman Sachs in warning that the market&#039;s expectation for a rate cut is not realistic.</td></tr></table>] delay=[100]"><a href="https://www.cnbc.com/2019/06/12/ubs-says-no-rate-cut-coming-soon-despite-what-the-market-thinks.html" target="_blank" class="nn-tab-link">Another major Wall Street bank says there will be no rate cut soon, despite what market wants</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/double-blow-as-emerging-market-stocks-fall-and-get-more-costly?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:06AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>A $17 Trillion Market Runs Out of Bargains</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/double-blow-as-emerging-market-stocks-fall-and-get-more-costly?srnd=markets-vp" target="_blank" class="nn-tab-link">A $17 Trillion Market Runs Out of Bargains</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/u-k-banks-diversity-push-masks-horrifying-problems-women-say?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">07:28AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>U.K. Banks Diversity Push Masks ‘Horrifying’ Problems, Women Say</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/u-k-banks-diversity-push-masks-horrifying-problems-women-say?srnd=markets-vp" target="_blank" class="nn-tab-link">U.K. Banks Diversity Push Masks ‘Horrifying’ Problems, Women Say</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/woodford-issues-another-apology-remains-bullish-on-cheap-u-k?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">07:22AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Woodford Issues Another Apology, Remains Bullish on ‘Cheap’ U.K.</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/woodford-issues-another-apology-remains-bullish-on-cheap-u-k?srnd=markets-vp" target="_blank" class="nn-tab-link">Woodford Issues Another Apology, Remains Bullish on ‘Cheap’ U.K.</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/business-48607093','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">06:42AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Demand for floral prints and block colours helps the fashion chain outperform its rivals.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/business-48607093" target="_blank" class="nn-tab-link">Boohoo credits floral prints for sales surge</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/five-things-you-need-to-know-to-start-your-day-jwt3etxm?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">06:30AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Five Things You Need to Know to Start Your Day</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/five-things-you-need-to-know-to-start-your-day-jwt3etxm?srnd=markets-vp" target="_blank" class="nn-tab-link">Five Things You Need to Know to Start Your Day</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/technology-48607673','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">06:27AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The social network says it will not remove a fake video of its founder created with AI software.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/technology-48607673" target="_blank" class="nn-tab-link">Facebook lets deepfake Zuckerberg video stay on Instagram</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/europe-inflation-expectations-at-record-low-worsens-ecb-headache?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">06:00AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Europe Inflation Expectations at Record Low Worsens ECB Headache</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/europe-inflation-expectations-at-record-low-worsens-ecb-headache?srnd=markets-vp" target="_blank" class="nn-tab-link">Europe Inflation Expectations at Record Low Worsens ECB Headache</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/business-48606304','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:57AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The discount retailer plans 40 new stores in the south east of England, creating 1,500 new jobs.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/business-48606304" target="_blank" class="nn-tab-link">Lidl ramps up supermarket battle with 40 new stores</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/south-africa-antitrust-body-told-to-rewrite-rand-rigging-charges?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:54AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>S. African Rand-Rigging Probe Found Lacking; Redraft Ordered</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/south-africa-antitrust-body-told-to-rewrite-rand-rigging-charges?srnd=markets-vp" target="_blank" class="nn-tab-link">S. African Rand-Rigging Probe Found Lacking; Redraft Ordered</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/europe-s-most-unloved-stock-is-a-top-performing-belgian-retailer?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:45AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Europe’s Most Unloved Stock Is a Top-Performing Belgian Retailer</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/europe-s-most-unloved-stock-is-a-top-performing-belgian-retailer?srnd=markets-vp" target="_blank" class="nn-tab-link">Europe’s Most Unloved Stock Is a Top-Performing Belgian Retailer</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/bank-indonesia-may-ease-monetary-policy-finance-minister-says?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:34AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Bank Indonesia May Ease Monetary Policy, Finance Minister Says</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/bank-indonesia-may-ease-monetary-policy-finance-minister-says?srnd=markets-vp" target="_blank" class="nn-tab-link">Bank Indonesia May Ease Monetary Policy, Finance Minister Says</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/technology/personaltech/design-and-mail-your-own-letterhead-stationery.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:00AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Even in today’s digital world, notes sent under a formal letterhead can help get the right message across. Here’s how to make your own powerful design with just a few keystrokes.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/technology/personaltech/design-and-mail-your-own-letterhead-stationery.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">Get More From Your Letters With Custom Stationery for Print or Pixels</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/sugar-output-in-india-seen-sinking-to-3-year-low-on-dry-weather?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:59AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Sugar Output in India Seen Sinking to 3-Year Low on Dry Weather</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/sugar-output-in-india-seen-sinking-to-3-year-low-on-dry-weather?srnd=markets-vp" target="_blank" class="nn-tab-link">Sugar Output in India Seen Sinking to 3-Year Low on Dry Weather</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/the-buying-craze-for-saudi-telecom-stocks-has-analysts-frowning?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:39AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The Buying Craze for Saudi Telecom Stocks Has Analysts Frowning</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/the-buying-craze-for-saudi-telecom-stocks-has-analysts-frowning?srnd=markets-vp" target="_blank" class="nn-tab-link">The Buying Craze for Saudi Telecom Stocks Has Analysts Frowning</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/hong-kong-protests-lengthen-list-of-worries-for-stock-traders?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:37AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Hong Kong Protests Lengthen List of Worries for Stock Traders</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/hong-kong-protests-lengthen-list-of-worries-for-stock-traders?srnd=markets-vp" target="_blank" class="nn-tab-link">Hong Kong Protests Lengthen List of Worries for Stock Traders</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/britain-s-banking-upstarts-vulnerable-to-a-downturn-boe-finds?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:28AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Britain’s Banking Upstarts Vulnerable to a Downturn, BOE Finds</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/britain-s-banking-upstarts-vulnerable-to-a-downturn-boe-finds?srnd=markets-vp" target="_blank" class="nn-tab-link">Britain’s Banking Upstarts Vulnerable to a Downturn, BOE Finds</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/beyond-meat-s-last-bullish-analyst-capitulates-after-400-rally?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:14AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Beyond Meat Last Bullish Analyst Capitulates After 400% Gain</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/beyond-meat-s-last-bullish-analyst-capitulates-after-400-rally?srnd=markets-vp" target="_blank" class="nn-tab-link">Beyond Meat Last Bullish Analyst Capitulates After 400% Gain</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/jpmorgan-says-treasury-10-year-yield-may-be-set-for-more-upside?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:58AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>JPMorgan Says Treasury 10-Year Yield May Be Set for More Upside</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/jpmorgan-says-treasury-10-year-yield-may-be-set-for-more-upside?srnd=markets-vp" target="_blank" class="nn-tab-link">JPMorgan Says Treasury 10-Year Yield May Be Set for More Upside</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/billionaire-philip-green-s-empire-hanging-on-landlords-vote?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:44AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Billionaire Philip Green’s Empire Hanging on Landlords’ Vote</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/billionaire-philip-green-s-empire-hanging-on-landlords-vote?srnd=markets-vp" target="_blank" class="nn-tab-link">Billionaire Philip Green’s Empire Hanging on Landlords’ Vote</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/credit-scare-fuels-demand-for-overnight-debt-funds-in-india?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">01:48AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Credit Scare Fuels Demand for Overnight Debt Funds in India</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/credit-scare-fuels-demand-for-overnight-debt-funds-in-india?srnd=markets-vp" target="_blank" class="nn-tab-link">Credit Scare Fuels Demand for Overnight Debt Funds in India</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/five-things-you-need-to-know-to-start-your-day?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">01:26AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Five Things You Need to Know to Start Your Day</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/five-things-you-need-to-know-to-start-your-day?srnd=markets-vp" target="_blank" class="nn-tab-link">Five Things You Need to Know to Start Your Day</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/business/hong-kong-china-protests-business.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">01:16AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>A wave of concern has spread through a community of foreign consultants, investors and executives who have made the territory their home and regional headquarters.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/business/hong-kong-china-protests-business.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">As Protesters Fill Hong Kong’s Streets, Businesses Are Alarmed, Too</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-11/hong-kong-developer-drops-land-bid-due-to-social-instability?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">01:15AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Hong Kong Developer Drops $1.4 Billion Bid on 'Instability'</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-11/hong-kong-developer-drops-land-bid-due-to-social-instability?srnd=markets-vp" target="_blank" class="nn-tab-link">Hong Kong Developer Drops $1.4 Billion Bid on 'Instability'</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/nomura-shareholders-urged-to-vote-out-ceo-after-information-leak?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">12:38AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Nomura Shareholders Are Urged to Reject CEO After Leak</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/nomura-shareholders-urged-to-vote-out-ceo-after-information-leak?srnd=markets-vp" target="_blank" class="nn-tab-link">Nomura Shareholders Are Urged to Reject CEO After Leak</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/petrochina-s-cure-involves-halving-its-workforce-says-bernstein?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">12:31AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>PetroChina's Cure Involves Halving Its Workforce, Says Bernstein</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/petrochina-s-cure-involves-halving-its-workforce-says-bernstein?srnd=markets-vp" target="_blank" class="nn-tab-link">PetroChina's Cure Involves Halving Its Workforce, Says Bernstein</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/china-s-huatai-plans-to-raise-2-billion-through-london-listing?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">12:16AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>China's Huatai Plans to Raise $2 Billion Through London Listing</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/china-s-huatai-plans-to-raise-2-billion-through-london-listing?srnd=markets-vp" target="_blank" class="nn-tab-link">China's Huatai Plans to Raise $2 Billion Through London Listing</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/business-48604495','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Melbourne will become a pilot city for Uber's air taxi service, with test flights due to begin in 2020.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/business-48604495" target="_blank" class="nn-tab-link">Uber takes its flying taxi ambitions to Australia</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/hong-kong-dollar-jumps-to-five-month-high-on-tighter-liquidity?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Hong Kong Dollar Is Surprise Winner as Protesters Blockade Roads</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/hong-kong-dollar-jumps-to-five-month-high-on-tighter-liquidity?srnd=markets-vp" target="_blank" class="nn-tab-link">Hong Kong Dollar Is Surprise Winner as Protesters Blockade Roads</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.nytimes.com/2019/06/12/business/trade-war-us-china-tourism.html?emc=rss&partner=rss','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/6.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The number of Chinese tourists is falling. And that’s especially painful to businesses they favor, because they tend to spend more than other visitors.</td></tr></table>] delay=[100]"><a href="https://www.nytimes.com/2019/06/12/business/trade-war-us-china-tourism.html?emc=rss&partner=rss" target="_blank" class="nn-tab-link">As Trade War With U.S. Grinds On, Chinese Tourists Stay Away</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/nigerian-explorer-plans-tamper-proof-pipeline-to-curb-theft?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Nigerian Explorer Plans Tamper-Proof Pipeline to Curb Theft</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/nigerian-explorer-plans-tamper-proof-pipeline-to-curb-theft?srnd=markets-vp" target="_blank" class="nn-tab-link">Nigerian Explorer Plans Tamper-Proof Pipeline to Curb Theft</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/hong-kong-stocks-drop-most-in-asia-as-protesters-block-roads?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Hong Kong Stocks Drop Most in Asia as Protesters Block Roads</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/hong-kong-stocks-drop-most-in-asia-as-protesters-block-roads?srnd=markets-vp" target="_blank" class="nn-tab-link">Hong Kong Stocks Drop Most in Asia as Protesters Block Roads</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/giant-asian-food-company-eyes-soybean-expansion-in-hard-times?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Giant Asia Food Company Eyes Soybean Expansion in Hard Times</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/giant-asian-food-company-eyes-soybean-expansion-in-hard-times?srnd=markets-vp" target="_blank" class="nn-tab-link">Giant Asia Food Company Eyes Soybean Expansion in Hard Times</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/musk-tells-tesla-shareholders-consumer-demand-not-a-problem?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Musk Tells Tesla Shareholders Consumer Demand Not a Problem</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/musk-tells-tesla-shareholders-consumer-demand-not-a-problem?srnd=markets-vp" target="_blank" class="nn-tab-link">Musk Tells Tesla Shareholders Consumer Demand Not a Problem</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/china-consumer-inflation-picks-up-in-may-amid-food-price-gains?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>China Consumer Inflation Picks Up in May Amid Food Price Gains</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/china-consumer-inflation-picks-up-in-may-amid-food-price-gains?srnd=markets-vp" target="_blank" class="nn-tab-link">China Consumer Inflation Picks Up in May Amid Food Price Gains</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/jokowi-has-narrow-window-to-reform-economy-former-minister-says?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Jokowi Has Narrow Window to Reform Economy, Former Minister Says</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/jokowi-has-narrow-window-to-reform-economy-former-minister-says?srnd=markets-vp" target="_blank" class="nn-tab-link">Jokowi Has Narrow Window to Reform Economy, Former Minister Says</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/australia-s-interest-rate-cut-fails-to-lift-gloom-about-economy?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Australia's Interest-Rate Cut Fails to Lift Gloom About Economy</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/australia-s-interest-rate-cut-fails-to-lift-gloom-about-economy?srnd=markets-vp" target="_blank" class="nn-tab-link">Australia's Interest-Rate Cut Fails to Lift Gloom About Economy</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-12/china-sends-warning-signal-to-yuan-bears-before-g20-meeting?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>China Sends Warning Signal to Yuan Bears Before G20 Meeting</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-12/china-sends-warning-signal-to-yuan-bears-before-g20-meeting?srnd=markets-vp" target="_blank" class="nn-tab-link">China Sends Warning Signal to Yuan Bears Before G20 Meeting</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-11/californians-asked-to-curb-power-use-as-heat-stokes-fire-risk?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Californians Asked to Curb Power Use as Heat Stokes Fire Risk</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-11/californians-asked-to-curb-power-use-as-heat-stokes-fire-risk?srnd=markets-vp" target="_blank" class="nn-tab-link">Californians Asked to Curb Power Use as Heat Stokes Fire Risk</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/business-48597203','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The Competition and Markets Authority has launched an investigation into unfair leasehold contracts.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/business-48597203" target="_blank" class="nn-tab-link">'We've been caught in a leasehold trap'</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bbc.co.uk/news/business-48593588','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/9.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Zero-hours contract workers will get greater security under a new programme called Living Hours.</td></tr></table>] delay=[100]"><a href="https://www.bbc.co.uk/news/business-48593588" target="_blank" class="nn-tab-link">Firms face pressure to improve zero-hours contracts</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-11/opec-still-gridlocked-on-meeting-date-amid-iran-saudi-schism?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>OPEC Still Gridlocked on Meeting Date Amid Iran-Saudi Schism</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-11/opec-still-gridlocked-on-meeting-date-amid-iran-saudi-schism?srnd=markets-vp" target="_blank" class="nn-tab-link">OPEC Still Gridlocked on Meeting Date Amid Iran-Saudi Schism</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-11/five-things-you-need-to-know-to-start-your-day-jwsefz2t?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Five Things You Need to Know to Start Your Day</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-11/five-things-you-need-to-know-to-start-your-day-jwsefz2t?srnd=markets-vp" target="_blank" class="nn-tab-link">Five Things You Need to Know to Start Your Day</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://www.bloomberg.com//news/articles/2019-06-11/vietnam-hopes-to-lure-foreign-market-investors-with-new-products?srnd=markets-vp','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/7.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Vietnam Hopes to Lure Foreign Market Investors With New Products</td></tr></table>] delay=[100]"><a href="https://www.bloomberg.com//news/articles/2019-06-11/vietnam-hopes-to-lure-foreign-market-investors-with-new-products?srnd=markets-vp" target="_blank" class="nn-tab-link">Vietnam Hopes to Lure Foreign Market Investors With New Products</a></td>
+            </tr></table>
+                    </td>
+                    <td></td>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/6vq0-IFLf8I/black-student-activists-demand-columbia-fire-lecturer-who-prosecuted-central-park','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:25PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Authored by Greg Piper via The College Fix,
+
+‘Columbia University has always been a site of anti-Black racism and violence’
+
+
+
+It looks like Harvard University isn’t the only Ivy League school where student activists believe that working in the...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/6vq0-IFLf8I/black-student-activists-demand-columbia-fire-lecturer-who-prosecuted-central-park" target="_blank" class="nn-tab-link">Black Student Activists Demand Columbia Fire Lecturer Who Prosecuted 'Central Park Five'</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269951-july-rate-cut-wait-feds-complete-capitulation-get-aggressive?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:18PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>July Rate Cut? Wait For The Fed's Complete Capitulation To Get Aggressive</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269951-july-rate-cut-wait-feds-complete-capitulation-get-aggressive?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">July Rate Cut? Wait For The Fed's Complete Capitulation To Get Aggressive</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269950-prospect-capital-upcoming-credit-issues-11-percent-yielding-replacement?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:09PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Prospect Capital: Upcoming Credit Issues And 11%+ Yielding Replacement</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269950-prospect-capital-upcoming-credit-issues-11-percent-yielding-replacement?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">Prospect Capital: Upcoming Credit Issues And 11%+ Yielding Replacement</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/yap2Xtdjs1Y/obama-admin-purged-12-years-speeches-immigration-crisis-hours-trump-inauguration','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:05PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Hours before President Trump took office, the Obama administration scrambled to purge 12 years worth of transcripts spanning hundreds of speeches from the Immigrations and Customs Enforcement (ICE) website, according to the Daily Caller's Jason Hopki...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/yap2Xtdjs1Y/obama-admin-purged-12-years-speeches-immigration-crisis-hours-trump-inauguration" target="_blank" class="nn-tab-link">Obama Admin Purged 12 Years Of ICE Speeches On Immigration Crisis Hours Before Trump Inauguration</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/4C9J7RhVMLg/if-gold-was-just-barbarous-relic','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:45PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Authored by James Rickards via The Daily Reckoning,
+
+There’s nothing new about the Russian accumulation of gold bullion in their reserve position. It began in a material way in 2009 when Russia had about 600 metric tonnes of gold.
+
+
+
+Today, Rus...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/4C9J7RhVMLg/if-gold-was-just-barbarous-relic" target="_blank" class="nn-tab-link">If Gold Was Just A Barbarous Relic...</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/uGk6kdGmwNc/911-victims-fund-bill-unanimously-passes-after-jon-stewart-publicly-shames-house','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:25PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The House Judiciary Committee unanimously passed a bill on Wednesday which would permanently reauthorize the 9/11 Victim Compensation Fund, one day after comedian and activist Jon Stewart tore the committee a new one on Tuesday - calling them 'shamef...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/uGk6kdGmwNc/911-victims-fund-bill-unanimously-passes-after-jon-stewart-publicly-shames-house" target="_blank" class="nn-tab-link">9/11 Victims Fund Bill Unanimously Passes After Jon Stewart Publicly Shames House Panel</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/qkyyOLsoNkc/bonds-bitcoin-bid-dollar-stocks-oil-skid','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">04:01PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Weaker than expected CPI - more room for The Fed to ease right? So why didn't stocks rally as we've been trained they would?
+
+
+
+ 
+
+After two days of melting-up, Chinese stocks took a breather overnight...
+
+
+
+ 
+
+European stocks were lower ...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/qkyyOLsoNkc/bonds-bitcoin-bid-dollar-stocks-oil-skid" target="_blank" class="nn-tab-link">Bonds & Bitcoin Bid As Stocks & Commodities Skid</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/labour-initiative-to-block-no-deal-brexit-fails-10-tories-8-labour-defy-whips-dfl2ADtDG0i8FhOMqcBlJw/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:54PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Thanks to 8 courageous Labour MPs who want to deliver Brexit,  Corbyn's attempt to block a No Deal Brexit Fails.</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/labour-initiative-to-block-no-deal-brexit-fails-10-tories-8-labour-defy-whips-dfl2ADtDG0i8FhOMqcBlJw/" target="_blank" class="nn-tab-link">Labour Initiative to Block No-Deal Brexit Fails: 10 Tories, 8 Labour Defy Whips</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/O2OxtJ3c9Mo/countless-americans-living-their-vehicles-has-become-new-normal','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:50PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Authored by Michael Snyder via The End of The American Dream blog,
+
+Once again tonight, countless numbers of Americans will sleep in their vehicles, and this is a problem that is getting worse with each passing year.  According to the Department of...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/O2OxtJ3c9Mo/countless-americans-living-their-vehicles-has-become-new-normal" target="_blank" class="nn-tab-link">For Countless Americans, Living In Their Vehicles Has Become "The New Normal"</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/llT_PXH7HkA/us-government-spending-soars-all-time-high-deficit-hits-record-month-may','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:35PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Another month, another frightening jump in the US budget deficit. And this time with a record surge in government spending to boot.
+
+According to the latest Treasury data, the US budget deficit in May - not a traditionally high-spending month for t...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/llT_PXH7HkA/us-government-spending-soars-all-time-high-deficit-hits-record-month-may" target="_blank" class="nn-tab-link">US Government Spending Soars To All Time High As Deficit Hits Record For Month Of May</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/uWuvhIFDO5Y/flynn-hires-sidney-powell-muellers-pit-bull-meets-his-match-again','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:10PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Via SaraCarter.com,
+
+Embattled Lt. Gen. Michael Flynn has hired well known defense attorney Sidney Powell to represent him before his sentencing hearing in Washington D.C.’s federal court. Flynn, who fired his attorney’s last week, will still fully...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/uWuvhIFDO5Y/flynn-hires-sidney-powell-muellers-pit-bull-meets-his-match-again" target="_blank" class="nn-tab-link">Flynn Hires Sidney Powell - Mueller's "Pit Bull" Meets His Match, Again</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/hFg3FPKqqzA/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:00PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This is always a fascinating read . . . &#160; &#160; Click for full slide deck. Source: Bond
+The post Meeker&#8217;s Internet Trends 2019 appeared first on The Big Picture.</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/hFg3FPKqqzA/" target="_blank" class="nn-tab-link">Meeker’s Internet Trends 2019</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/1f9oz0ViwXI/chinas-hu-warns-beijing-preparing-ties-washington-further-unravel','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">02:55PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Hu Xijin, the Global Times editor whose twitter feed has been described as a weapon used by Beijing to hammer American markets, tweeted yet another warning on Wednesday that the US-China trade war won't be ending any time soon.
+
+Utilizing dubious E...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/1f9oz0ViwXI/chinas-hu-warns-beijing-preparing-ties-washington-further-unravel" target="_blank" class="nn-tab-link">China's Hu Warns Beijing Is Preparing For Ties With Washington To Further Unravel</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/LfwQILhGRNs/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">02:49PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post What to Do If You’re House Rich but Cash Poor appeared first on Daily Reckoning.
+If you are “house-rich” but “cash poor,” a reverse mortgage might be a way to access some additional cash for your retirement years…
+The post What to Do If You...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/LfwQILhGRNs/" target="_blank" class="nn-tab-link">What to Do If You’re House Rich but Cash Poor</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/zerohedge/feed/~3/K_Dd6PShnEM/kolanovic-explains-why-he-not-bearish-when-one-individual-can-crash-market','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/132.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">02:45PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>There is a decidedly more subdued tone to the reports by Marko Kolanovic in recent days. Gone is the euphoria from early April, when the JPM quant predicted the S&P would hit 3,000 as soon as May (which instead turned out to be the worst May for stoc...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/zerohedge/feed/~3/K_Dd6PShnEM/kolanovic-explains-why-he-not-bearish-when-one-individual-can-crash-market" target="_blank" class="nn-tab-link">Kolanovic Explains "Why He Is Not Bearish When One Individual Can Crash The Market"</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/economic-illiterates-at-the-fed-and-econoday-are-not-cheering-today-s-cpi-report-aVzC5yCsr02zagn-ZpCBhw/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">01:59PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The CPI rose 0.1% month-over-month. Econoday was disappointed. But it did find 'bright spots' in food and air travel.</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/economic-illiterates-at-the-fed-and-econoday-are-not-cheering-today-s-cpi-report-aVzC5yCsr02zagn-ZpCBhw/" target="_blank" class="nn-tab-link">Economic Illiterates at the Fed and Econoday are Not Cheering Today's CPI Report</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/Xn0ULdA63Uk/houston-real-estate-in-may-sales-up-3.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">01:28PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>From the HAR: Houston Home Sales and Prices Gain Momentum in MayEncouraged by continued low interest rates and a growing selection of housing options, home buyers kept the greater Houston real estate market in positive territory for a fourth straight...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/Xn0ULdA63Uk/houston-real-estate-in-may-sales-up-3.html" target="_blank" class="nn-tab-link">Houston Real Estate in May: Sales up 3% YoY, Inventory Up 10%</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269884-quaint-oak-bancorp-mortgage-business-masks-bank-underperformance?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">12:39PM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Quaint Oak Bancorp: Mortgage Business Masks Bank Underperformance</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269884-quaint-oak-bancorp-mortgage-business-masks-bank-underperformance?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">Quaint Oak Bancorp: Mortgage Business Masks Bank Underperformance</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://vantagepointtrading.com/should-you-swing-trade-or-day-trade-the-pros-and-cons-of-each/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/137.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">11:15AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>One of the most common questions I get asked is whether to focus more on day trading or swing trading, or focus on both? The answer depends on your experience level, your goals, your preferences, your time availability, and in some cases your capital...</td></tr></table>] delay=[100]"><a href="http://vantagepointtrading.com/should-you-swing-trade-or-day-trade-the-pros-and-cons-of-each/" target="_blank" class="nn-tab-link">Should You Swing Trade or Day Trade? The Pros and Cons of Each</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/eih5ijGmHKI/cleveland-fed-key-measures-show.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">11:13AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The Cleveland Fed released the median CPI and the trimmed-mean CPI this morning:According to the Federal Reserve Bank of Cleveland, the median Consumer Price Index rose 0.2% (2.3% annualized rate) in May. The 16% trimmed-mean Consumer Price Index als...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/eih5ijGmHKI/cleveland-fed-key-measures-show.html" target="_blank" class="nn-tab-link">Cleveland Fed: Key Measures Show Inflation Close to 2% YoY in May, Core PCE below 2%</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/0itb1owb46I/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">10:56AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Registration for the first of its kind Wealth/Stack Conference on September 8-10th, 2019 at the Scottsdale Plaza Resort in Arizona is now...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/0itb1owb46I/" target="_blank" class="nn-tab-link">Wednesday links: fixed income quants</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/OGZFkuk2wXk/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">10:05AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Wednesdays are all about personal finance here at Abnormal Returns. You can check out last week’s links including a look at the...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/OGZFkuk2wXk/" target="_blank" class="nn-tab-link">Personal finance links: the highest dividend</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/gMej_X4WOLY/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">09:15AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Source: WSJ &#160; From the really, really bad calls file: Last week, I showed this great chart by Torsten Sløk of Deutsche Bank. It revealed  just how bad markets are at forecasting future Federal Reserve actions. As the chart shows, the markets are...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/gMej_X4WOLY/" target="_blank" class="nn-tab-link">Surprise! Big Drop in 10-Year Treasury Yield</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://vantagepointtrading.com/uk-share-prices-watch-bat-dips-after-update/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/137.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:37AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>British American Tobacco (LON:BATS) is expectedly among today’s UK share prices to watch, as its trading update disappointed investors. Broader market sentiment has also deteriorated amid the latest trade tensions between the US and China.
+BAT heads ...</td></tr></table>] delay=[100]"><a href="http://vantagepointtrading.com/uk-share-prices-watch-bat-dips-after-update/" target="_blank" class="nn-tab-link">UK share prices watch: BAT dips after update</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/iqlWXA5629s/bls-cpi-increased-01-in-may-core-cpi.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:32AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>From the BLS: The Consumer Price Index for All Urban Consumers (CPI-U) increased 0.1 percent in May on a seasonally adjusted basis after rising 0.3 percent in April, the U.S. Bureau of Labor Statistics reported today. Over the last 12 months, the all...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/iqlWXA5629s/bls-cpi-increased-01-in-may-core-cpi.html" target="_blank" class="nn-tab-link">BLS: CPI increased 0.1% in May, Core CPI increased 0.1%</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/r_9GCovf65k/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:30AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>My midweek morning train reads: • Kreuger: The Economics of Rihanna’s Superstardom (New York Times) • Here’s Mary Meeker’s 2019 internet trends report (TechCrunch) • Metadata is the biggest little problem plaguing the music industry (The Verge) • Han...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/r_9GCovf65k/" target="_blank" class="nn-tab-link">10 Wednesday AM Reads</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/TmerNoKn5PI/mba-mortgage-applications-increased.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">08:10AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>From the MBA: Mortgage Applications Increase in Latest MBA Weekly SurveyMortgage applications increased 26.8 percent from one week earlier, according to data from the Mortgage Bankers Association’s (MBA) Weekly Mortgage Applications Survey for the we...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/TmerNoKn5PI/mba-mortgage-applications-increased.html" target="_blank" class="nn-tab-link">MBA: Mortgage Applications Increased Sharply in Latest Weekly Survey</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/QO-SvaY3A-E/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">06:00AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Volatility 101: An Introduction to Market Volatility Source: Visual Capitalist &#160; &#160; Why are certain times more volatile than others? In the short term, volatility is driven by changes in demand, which is largely related to changes in earning...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/QO-SvaY3A-E/" target="_blank" class="nn-tab-link">Market Volatility in Perspective</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://howardlindzon.com/big-changes-to-my-investing-workflow/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/113.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">05:59AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Since winding down my hedge fund in 2006, I have been all about slimming down my stock market investing time. This meant getting off the idea that I needed eight screens on my desk to invest and follow the markets.    
+In hindsight it was a great tim...</td></tr></table>] delay=[100]"><a href="http://howardlindzon.com/big-changes-to-my-investing-workflow/" target="_blank" class="nn-tab-link">Big Changes to My Investing Workflow</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/clueless-trump-demands-you-pay-more-for-less-he-says-so-himself-hcElGM5ER0eiz-1K8onp9g/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:32AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>In another absurd Tweet, Trump lashes out at the Fed and a US dollar that supposedly buys too much</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/clueless-trump-demands-you-pay-more-for-less-he-says-so-himself-hcElGM5ER0eiz-1K8onp9g/" target="_blank" class="nn-tab-link">Clueless Trump Demands You Pay More For Less: He Says So Himself</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/thedisciplinedinvestor/EBHR/~3/pcU3F8zT8hY/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/121.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">03:25AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Rate cut chances are rolling up. Markets continue to see bids as there is hope for the Fed to ride in and save the day ! Mexico Tariffs lifted, new China threats and Fake meat gets cooled off. What is with the employment situation? One off or more to...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/thedisciplinedinvestor/EBHR/~3/pcU3F8zT8hY/" target="_blank" class="nn-tab-link">DHUnplugged #460: Chances Are…</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269780-spyd-long-term-buy?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">02:47AM</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>SPYD Is A Long-Term Buy</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269780-spyd-long-term-buy?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">SPYD Is A Long-Term Buy</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/oERlIfav7Bs/wednesday-cpi.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Wednesday:• At 7:00 AM ET, The Mortgage Bankers Association (MBA) will release the results for the mortgage purchase applications index.• At 8:30 AM, The Consumer Price Index for May from the BLS.  The consensus is for 0.1% increase in CPI, and a 0.2...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/oERlIfav7Bs/wednesday-cpi.html" target="_blank" class="nn-tab-link">Wednesday: CPI</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/debate-over-brexit-fee-would-nonpayment-constitute-default-who-owes-whom--rEGvQInzUGSEUpUAKRxfQ/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Round and round we go. After more than two years the UK and EU are still debating Brexit breakup fees.</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/debate-over-brexit-fee-would-nonpayment-constitute-default-who-owes-whom--rEGvQInzUGSEUpUAKRxfQ/" target="_blank" class="nn-tab-link">Debate Over Brexit Fee: Would Nonpayment Constitute Default? Who Owes Whom?</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/rbGYa0B1M0w/la-area-port-traffic-down-year-over.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Special note: The expansion to the Panama Canal was completed in 2016 (As I noted a few years ago), and some of the traffic that used the ports of Los Angeles and Long Beach is probably going through the canal. This might be impacting TEUs on the Wes...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/rbGYa0B1M0w/la-area-port-traffic-down-year-over.html" target="_blank" class="nn-tab-link">LA area Port Traffic Down Year-over-year in May</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/italy-s-mini-bot-trojan-horse-could-blow-up-the-eurozone-cjx8JMxyMk2eydQlYq4pkw/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Italy threatens to create a parallel currency dubbed the Mini-BOT. If launched, it could lead to a Eurozone breakup.</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/italy-s-mini-bot-trojan-horse-could-blow-up-the-eurozone-cjx8JMxyMk2eydQlYq4pkw/" target="_blank" class="nn-tab-link">Italy's Mini-BOT Trojan Horse Could Blow Up the Eurozone</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/XrTiQGnTM5Y/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Don’t let the rise of passive investing obscure the fundamental advantages of diversification. In our Masters in Business interview, Sharon French explains why both the active and passive approaches can be complementary to each other in a portfolio. ...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/XrTiQGnTM5Y/" target="_blank" class="nn-tab-link">Why You Should Combine Passive and Active Investing</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/VfTNPTfB4IU/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Registration for the first of its kind Wealth/Stack Conference on September 8-10th, 2019 at the Scottsdale Plaza Resort in Arizona is now...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/VfTNPTfB4IU/" target="_blank" class="nn-tab-link">Tuesday links: time in the market</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/38mqT9a_n0A/us-demographics-largest-5-year-cohorts.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>IMPORTANT NOTE:  The data below is based on the Census 2018 estimates.  Housing economist Tom Lawler has pointed out some questions about earlier Census estimates, see: Lawler: 'New Long-Term Population Projections Show Slower Growth than Previous Pr...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/38mqT9a_n0A/us-demographics-largest-5-year-cohorts.html" target="_blank" class="nn-tab-link">U.S. Demographics: Largest 5-year cohorts, and Ten most Common Ages in 2018</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269631-abbotts-new-continuous-glucose-monitor-can-change-company?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>How Abbott's New Continuous Glucose Monitor Can Change The Company</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269631-abbotts-new-continuous-glucose-monitor-can-change-company?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">How Abbott's New Continuous Glucose Monitor Can Change The Company</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/8stjozr0f-s/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post The Easy Side Business You Can Start from Scratch appeared first on Daily Reckoning.
+If you’ve been searching for a side business that has low overhead, requires minimal technical skills, and will generate passive income on a steady basis, ...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/8stjozr0f-s/" target="_blank" class="nn-tab-link">The Easy Side Business You Can Start from Scratch</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269611-global-self-storage-buying-properties-steep-discount?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Global Self Storage: Buying Properties At A Steep Discount</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269611-global-self-storage-buying-properties-steep-discount?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">Global Self Storage: Buying Properties At A Steep Discount</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/g7CnfFu5KZk/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>haTuesdays are all about academic (and practitioner) literature at Abnormal Returns. You can check out last week’s links including a look at...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/g7CnfFu5KZk/" target="_blank" class="nn-tab-link">Research links: dropping the GFC</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/QTu03tJqnk4/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>&#160; &#160; Today is the 10 year anniversary of one of those things that just stays with you. Get Ready for Inflation and Higher Interest Rates was a column by Art Laffer, published on this day a decade ago. It it notable both for its terrible timi...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/QTu03tJqnk4/" target="_blank" class="nn-tab-link">Wildly Wrong About Interest Rates, Jobs & Inflation</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269587-verizon-7-reasons-turn-bearish?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Verizon: 7 Reasons To Turn Bearish</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269587-verizon-7-reasons-turn-bearish?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">Verizon: 7 Reasons To Turn Bearish</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/H7mC9EkJs-E/small-business-optimism-index-increased.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>CR Note: Most of this survey is noise, but there is some information, especially on the labor market and the 'Single Most Important Problem'.From the National Federation of Independent Business (NFIB): May 2019 Report: Small Business Optimism IndexSm...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/H7mC9EkJs-E/small-business-optimism-index-increased.html" target="_blank" class="nn-tab-link">Small Business Optimism Index increased in May</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://vantagepointtrading.com/uk-share-prices-watch-halma-rises-on-tuesday/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/137.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Hazard detection and life protection products company Halma (LON:HLMA) has been one of today’s UK share prices to watch, with investors reacting positively to the group’s full-year update. Compass Group (LON:CPG) meanwhile is in negative territory as...</td></tr></table>] delay=[100]"><a href="http://vantagepointtrading.com/uk-share-prices-watch-halma-rises-on-tuesday/" target="_blank" class="nn-tab-link">UK share prices watch: Halma rises on Tuesday</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/68uGKrd8e5c/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>My Two-for-Tuesday morning train reads: • The Traditional Active Manager That’s Raking in Assets (Institutional Investor) • Love Your Job? Someone May be Taking Advantage of You (Fuqua School of Business) but see It’s Never Too Late to Start a Brilli...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/68uGKrd8e5c/" target="_blank" class="nn-tab-link">10 Tuesday AM Reads</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269343-bankinter-overlooked-spanish-bank-4_75-percent-dividend-yield?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Bankinter: An Overlooked Spanish Bank With A 4.75% Dividend Yield</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269343-bankinter-overlooked-spanish-bank-4_75-percent-dividend-yield?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">Bankinter: An Overlooked Spanish Bank With A 4.75% Dividend Yield</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269515-macerich-mousetrap?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The Macerich Mousetrap</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269515-macerich-mousetrap?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">The Macerich Mousetrap</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/apAIzawgAWc/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This data series is simply astonishing: The top 0.1% of taxpayers (170,000 families) control 20% of American wealth, the highest share since 1929. The top 1% control 39% of U.S. wealth, and the bottom 90% have only 26%. The bottom half of Americans c...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/apAIzawgAWc/" target="_blank" class="nn-tab-link">Wealth Ownership in America</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://howardlindzon.com/lindzanity-episode-7-steve-schwarz-joins-to-discuss-commercial-real-estate/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/113.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Back in 2007 Phoenix, a staggering 99 percent of the population were commercial real estate agents.
+The crash of 2008 changed everything.  Now just 89 percent of the Phoenix population is a commercial real estate agent.
+Ok…not quite.  I kid commercia...</td></tr></table>] delay=[100]"><a href="http://howardlindzon.com/lindzanity-episode-7-steve-schwarz-joins-to-discuss-commercial-real-estate/" target="_blank" class="nn-tab-link">Lindzanity – Episode 7 – Steve Schwarz Joins To Discuss Commercial Real Estate</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/eu-blinks-already-in-the-face-of-no-deal-brexit-the-eu-finds-a-unicorn-uNM-tj9hZ0efRAQkM-b9xg/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>In the face of increasing odds of a hard Brexit, solutions that Barnier told Theresa May cannot work, now magically do.</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/eu-blinks-already-in-the-face-of-no-deal-brexit-the-eu-finds-a-unicorn-uNM-tj9hZ0efRAQkM-b9xg/" target="_blank" class="nn-tab-link">EU Blinks Already: In the Face of No Deal Brexit, the EU Finds a Unicorn</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://seekingalpha.com/article/4269558-gladstone-investments-updated-dividend-sustainability-analysis-impacts-large-deemed?source=feed_tag_editors_picks','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/114.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Gladstone Investment's Updated Dividend Sustainability Analysis (Impacts From Very Large Deemed Distribution)</td></tr></table>] delay=[100]"><a href="https://seekingalpha.com/article/4269558-gladstone-investments-updated-dividend-sustainability-analysis-impacts-large-deemed?source=feed_tag_editors_picks" target="_blank" class="nn-tab-link">Gladstone Investment's Updated Dividend Sustainability Analysis (Impacts From Very Large Deemed Distribution)</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/trump-boom-in-one-picture-Lb9ZaJaKh0uzO2AybDwhVQ/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-11</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Deficits have only been at this level in or shortly after a recession. Unfortunately, this is the new normal.</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/trump-boom-in-one-picture-Lb9ZaJaKh0uzO2AybDwhVQ/" target="_blank" class="nn-tab-link">Trump "Boom" in One Picture</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/R08qBUrqprA/tuesday-ppi-small-business-index.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>From Matthew Graham at Mortgage News Daily: Mortgage Rates Move Up From Long-Term LowsMortgage rates had a fairly epic week last week, spending each day effectively pinned to the lowest levels since September 2017.  That followed a swift move lower i...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/R08qBUrqprA/tuesday-ppi-small-business-index.html" target="_blank" class="nn-tab-link">Tuesday: PPI, Small Business Index</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/p7LXumNzesY/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Why do so many of New York&#8217;s older skyscrapers have a similar design? The answer can be traced back to a monumental 1916 zoning law, which established “setback” requirements for buildings above a certain height. In the heart of the Financial Di...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/p7LXumNzesY/" target="_blank" class="nn-tab-link">The Last Skyscraper of Its Kind</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/boris-johnson-solidifies-lead-pledges-to-cut-taxes-when-prime-minister-TSbvbbzvqkSUDYPLXKbElw/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The 1922 Committee has certified 10 Tory candidates to battle to replace Theresa May. Boris Johnson solidified his lead.</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/boris-johnson-solidifies-lead-pledges-to-cut-taxes-when-prime-minister-TSbvbbzvqkSUDYPLXKbElw/" target="_blank" class="nn-tab-link">Boris Johnson Solidifies Lead: Pledges to Cut Taxes When Prime Minister</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/SMutZayZ_-E/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post The Perfect Storm appeared first on Daily Reckoning.
+Any one of these storms would create enough uncertainty for investors to sell stocks, raise cash and move to the sidelines. The combination of all three will make them run for the hills”....</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/SMutZayZ_-E/" target="_blank" class="nn-tab-link">The Perfect Storm</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/xYW34PSmrZA/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post Rickards: &#8220;Perfect Storm&#8221; Is Coming appeared first on Daily Reckoning.
+“Unfortunately, a political and market perfect storm is now on the way and may strike as early as Halloween 2019”... The greatest thing to fear is the lack o...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/xYW34PSmrZA/" target="_blank" class="nn-tab-link">Rickards: “Perfect Storm” Is Coming</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/CalculatedRisk/~3/EpJz1WoH3ro/seattle-real-estate-in-april-sales-up.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/142.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The  Northwest Multiple Listing Service reported Home Buyers Are 'Better Off,' But Market Is Heating UpYear-over-year (YOY) closed sales rose about 1.6 percent (from 9,011 in May 2018 to last month's total of 9,153)....The MLS report for May shows 16...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/CalculatedRisk/~3/EpJz1WoH3ro/seattle-real-estate-in-april-sales-up.html" target="_blank" class="nn-tab-link">Seattle Real Estate in April: Sales up 5.6% YoY, Inventory up 124% YoY from Low Levels</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/trump-says-fed-didn-t-listen-to-me-now-seeks-level-playing-field-with-china-LHklziPhNkywkcKfHM-0Mw/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Trump complains the Fed isn't listening to him. A chicken and egg question surfaces.</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/trump-says-fed-didn-t-listen-to-me-now-seeks-level-playing-field-with-china-LHklziPhNkywkcKfHM-0Mw/" target="_blank" class="nn-tab-link">Trump Says "Fed Didn't Listen to Me", Now Seeks "Level Playing Field" With China</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/cTsbKGDRuwE/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Registration for the first of its kind Wealth/Stack Conference on September 8-10th, 2019 at the Scottsdale Plaza Resort in Arizona is now...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/cTsbKGDRuwE/" target="_blank" class="nn-tab-link">Monday links: limiting your options</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/4Lc9O1TkHZg/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post 7 Reasons NOT to Buy a House with a Pool appeared first on Daily Reckoning.
+A friend of mine recently confessed that he’d made a big mistake buying a home with a swimming pool. He said if he had a do-over, he would never have considered a h...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/4Lc9O1TkHZg/" target="_blank" class="nn-tab-link">7 Reasons NOT to Buy a House with a Pool</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/a0sjRfuplcU/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Mondays are all about financial adviser-related links here at Abnormal Returns. You can check out last week’s links including a look at...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/a0sjRfuplcU/" target="_blank" class="nn-tab-link">Adviser links: sober investment management</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TheBigPicture/~3/8TjrF79f9po/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/100.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>10 Things People in Finance Should Never Say These trite and vapid statements deserve a decent but hasty burial. Bloomberg, June 10, 2019 &#160; &#160; What phrase makes you cringe? What commonly used statement (espeically in finance) really really b...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TheBigPicture/~3/8TjrF79f9po/" target="_blank" class="nn-tab-link">BBRG: 10 Things People in Finance Should Never Say</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://vantagepointtrading.com/uk-share-prices-watch-ferguson-in-the-doldrums/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/137.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Blue-chip plumbing specialist Ferguson (LON:FERG) has been one of today’s UK share prices to watch, with its third-quarter update failing to cheer investors even as the company announced share buyback. In smaller London-listed companies, troubled tou...</td></tr></table>] delay=[100]"><a href="http://vantagepointtrading.com/uk-share-prices-watch-ferguson-in-the-doldrums/" target="_blank" class="nn-tab-link">UK share prices watch: Ferguson in the doldrums</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/TraderMike/~3/uRHGvwpCj8E/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/101.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Weekly Market Recap Jun 09, 2019</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/TraderMike/~3/uRHGvwpCj8E/" target="_blank" class="nn-tab-link">Weekly Market Recap Jun 09, 2019</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://howardlindzon.com/momentum-monday-we-dont-need-no-stinking-tariffs/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/113.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-10</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Happy Monday…
+It felt like the markets were ready to roll over last week, but stocks caught a big bid.
+Ivanhoff and I put together our weekly Momentum Monday to get you the ideas that stand out to us this week.  Briefly, I like seeing so many names i...</td></tr></table>] delay=[100]"><a href="http://howardlindzon.com/momentum-monday-we-dont-need-no-stinking-tariffs/" target="_blank" class="nn-tab-link">Momentum Monday – We Don’t Need No Stinking Tariffs</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('https://moneymaven.io/mishtalk/economics/currency-war-or-trade-war-two-edged-dilemma-for-us-and-china-Tfp9AQpSlEmMwQsesxgq1w/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/102.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-09</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Does China (Trump) want to fight a trade war or a currency war?</td></tr></table>] delay=[100]"><a href="https://moneymaven.io/mishtalk/economics/currency-war-or-trade-war-two-edged-dilemma-for-us-and-china-Tfp9AQpSlEmMwQsesxgq1w/" target="_blank" class="nn-tab-link">Currency War or Trade War? Two-Edged Dilemma for US and China</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://traderfeed.blogspot.com/2019/06/three-key-mistakes-traders-make-in.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/105.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-09</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Ongoing evaluation of our trading enables us to learn from experience and guide ourselves toward improvements.&nbsp; We cannot change what we do not observe and measure.&nbsp; Successful traders study themselves--and their performance--every bit as d...</td></tr></table>] delay=[100]"><a href="http://traderfeed.blogspot.com/2019/06/three-key-mistakes-traders-make-in.html" target="_blank" class="nn-tab-link">Three Key Mistakes Traders Make In Evaluating Their Trading</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/FallondStockPicks/~3/HZ7t-2je2h8/s-and-nasdaq-confirm-breakouts-rallies.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/123.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-09</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The S&amp;P and Nasdaq were last to follow the lead of the Russell 2000, Dow and Semiconductor Index. It's now looking like respectable swing lows are in effect for all lead indices.For the S&amp;P there was a close above the 50-day MA in addition to...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/FallondStockPicks/~3/HZ7t-2je2h8/s-and-nasdaq-confirm-breakouts-rallies.html" target="_blank" class="nn-tab-link">S&P and Nasdaq confirm breakouts; rallies start to build</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/thedisciplinedinvestor/EBHR/~3/ua8K5uqTg2c/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/121.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-09</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>The Karate Kid of Economics strikes again &#8211; Tariffs on, Tariffs Off. Economic number are weak and that is bringing in the bad is good narrative &#8211; we discuss what to look for in the upcoming months ahead. Valuations, listener questions and...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/thedisciplinedinvestor/EBHR/~3/ua8K5uqTg2c/" target="_blank" class="nn-tab-link">TDI Podcast: Tariffornication (#615)</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/uZzXzv_pLt0/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-09</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Registration for the first of its kind Wealth/Stack Conference on September 8-10th, 2019 at the Scottsdale Plaza Resort in Arizona is now...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/uZzXzv_pLt0/" target="_blank" class="nn-tab-link">Sunday links: a total failure of risk control</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/l-9wUBtOrWw/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-09</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Thanks for checking in with us this weekend. Here are the most clicked on items on Abnormal Returns for the week ended...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/l-9wUBtOrWw/" target="_blank" class="nn-tab-link">Top clicks this week on Abnormal Returns</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://howardlindzon.com/you-never-know/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/113.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-09</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>I love blogging.
+I never know what kind of response I will get from a blog post.
+Yesterday’s post about the Raptors and The Three M’s was rather light, but so many friends took the time to reach out.
+My best pal Rob texted me from Toronto saying ‘can...</td></tr></table>] delay=[100]"><a href="http://howardlindzon.com/you-never-know/" target="_blank" class="nn-tab-link">You Never Know…</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/dOTelEfUL1A/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-08</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post The Coming Gold Breakout appeared first on Daily Reckoning.
+Central bank gold purchases mean demand for gold is here to stay...
+The post The Coming Gold Breakout appeared first on Daily Reckoning.</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/dOTelEfUL1A/" target="_blank" class="nn-tab-link">The Coming Gold Breakout</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/y0DqlxqVqW4/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-08</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post If Gold Was Just a Barbarous Relic&#8230; appeared first on Daily Reckoning.
+Russia’s deeper purpose for accumulating large amounts of gold... “The dollar’s days as the leading reserve currency are numbered”... 
+The post If Gold Was Just a ...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/y0DqlxqVqW4/" target="_blank" class="nn-tab-link">If Gold Was Just a Barbarous Relic…</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/7qEtRqWWLq0/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-08</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post Before You Pay Your Hospital Bill, Read This appeared first on Daily Reckoning.
+Have you run up a huge hospital bill that you’re having difficulty paying? You may have already pleaded with your insurance company and battled with debt collec...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/7qEtRqWWLq0/" target="_blank" class="nn-tab-link">Before You Pay Your Hospital Bill, Read This</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/IHffw75xOh4/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-08</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Registration for the first of its kind Wealth/Stack Conference on September 8-10th, 2019 at the Scottsdale Plaza Resort in Arizona is now...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/IHffw75xOh4/" target="_blank" class="nn-tab-link">Saturday links: offering contributions</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/abnormalreturns/~3/MmTR-bEFJcY/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/141.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-08</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Saturdays are all about longform links on Abnormal Returns. You can check out last week’s linkfest including a look at the case...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/abnormalreturns/~3/MmTR-bEFJcY/" target="_blank" class="nn-tab-link">Longform links: Airpod society</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://howardlindzon.com/the-3-ms/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/113.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-08</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Yesterday I watched Game 4 of the NBA finals with Ellen.  She is really enjoying watching this Raptors team and she is not a sports fan.
+I’m excited for my hometown.
+Yesterday, Microsoft, Mastercard and McDonald’s hit all time highs. They are like th...</td></tr></table>] delay=[100]"><a href="http://howardlindzon.com/the-3-ms/" target="_blank" class="nn-tab-link">The 3 M’s</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/0aChrzh9zB8/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-07</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post About Today&#8217;s Jobs Report&#8230; appeared first on Daily Reckoning.
+The May unemployment report: a big “miss”... More proof that bad news for Main Street is good news for Wall Street... The “new normal”...
+The post About Today&#8217;s...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/0aChrzh9zB8/" target="_blank" class="nn-tab-link">About Today’s Jobs Report…</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/dailyreckoning/~3/VMv9LYuFg_4/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/136.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-07</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>This post 7 Easy Ways to Save WITHOUT Coupons appeared first on Daily Reckoning.
+According to the Bureau of Labor Statistics’ 2016 Consumer Expenditure Survey, the average household spends $7,203 annually on food. The survey breaks this number down e...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/dailyreckoning/~3/VMv9LYuFg_4/" target="_blank" class="nn-tab-link">7 Easy Ways to Save WITHOUT Coupons</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://vantagepointtrading.com/uk-share-prices-watch-smiths-group-up-on-friday/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/137.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-07</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Smiths Group (LON:SMIN) has climbed into today’s UK share prices to watch list, with investors reacting positively to an executive appointment at its Medical business. Broader market sentiment meanwhile has been upbeat in the run-up to the highly-ant...</td></tr></table>] delay=[100]"><a href="http://vantagepointtrading.com/uk-share-prices-watch-smiths-group-up-on-friday/" target="_blank" class="nn-tab-link">UK share prices watch: Smiths Group up on Friday</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://howardlindzon.com/thinking-about-superfans-and-conversations-my-lindzanity-stocktwits-room/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/113.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-07</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>My friend Timothy Post (Bostonian living in Moscow) sent me an email the other day asking me to put comments back on my blog.  He thought it was important for the great community that this blog has to be able to chime in on certain posts and get a co...</td></tr></table>] delay=[100]"><a href="http://howardlindzon.com/thinking-about-superfans-and-conversations-my-lindzanity-stocktwits-room/" target="_blank" class="nn-tab-link">Thinking about Superfans and Conversations – My ‘Lindzanity’ Stocktwits Room</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://vantagepointtrading.com/uk-share-prices-watch-aviva-shines-on-thursday/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/137.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-06</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Blue-chip insurer Aviva (LON:AV) has stayed in this week’s UK share prices to watch after announcing a major shake-up which will see it target £300-million cost savings per year and shed 1,800 jobs. In smaller London-listed companies, Peppa Pig owner...</td></tr></table>] delay=[100]"><a href="http://vantagepointtrading.com/uk-share-prices-watch-aviva-shines-on-thursday/" target="_blank" class="nn-tab-link">UK share prices watch: Aviva shines on Thursday</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://howardlindzon.com/joe-rogan-and-naval-ravikant/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/113.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-06</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>I really enjoyed this Joe Rogan interview of Naval Ravikant.
+Naval likes to talk about the infinite leverage of this era and the future of work.  It is worth sharing with your high school and college kids as well.
+
+JRE #1309 – Naval Ravikant from Joe...</td></tr></table>] delay=[100]"><a href="http://howardlindzon.com/joe-rogan-and-naval-ravikant/" target="_blank" class="nn-tab-link">Joe Rogan and Naval Ravikant</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://feedproxy.google.com/~r/FallondStockPicks/~3/PSwFqRT8q5I/breakouts-for-russell-2000.html','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/123.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-05</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>It was a bit of a mixed bag, although the basis for a probable swing low for markets is in place.Best of the action was in the Semiconductor Index where there was a clear break from the downward channel, which also coincided with a return above the 2...</td></tr></table>] delay=[100]"><a href="http://feedproxy.google.com/~r/FallondStockPicks/~3/PSwFqRT8q5I/breakouts-for-russell-2000.html" target="_blank" class="nn-tab-link">Breakouts for Russell 2000, Semiconductors and Dow Industrials</a></td>
+            </tr>
+            <tr class="nn" onclick="window.open('http://vantagepointtrading.com/uk-share-prices-watch-hl-stays-in-the-doldrums/','_blank');return false;">
+                <td width="20"><img src="gfx/news/logo/137.gif" width="16" height="16" alt="" border="0"></td>
+                <td width="40" class="nn-date" align="center">Jun-05</td>
+                <td title="cssbody=[news_tooltip-bdy] cssheader=[news_tooltip-hdr] body=[<table width=400><tr><td class='news_tooltip-tab'>Blue-chip asset manager Hargreaves Lansdown (LON:HL) has remained among this week’s UK share prices to watch, staying in the doldrums in the wake of the suspension of Neil Woodford’s top fund. FTSE 100 insurer Aviva (LON:AV) is also underperforming t...</td></tr></table>] delay=[100]"><a href="http://vantagepointtrading.com/uk-share-prices-watch-hl-stays-in-the-doldrums/" target="_blank" class="nn-tab-link">UK share prices watch: HL stays in the doldrums</a></td>
+            </tr></table>
+                    </td>
+                </tr>
+            </table>
+        </div></div></div>
+            <div class="footer" style="margin-top: 40px">
+                <div class="footer_links">
+                    <a class="tab-link" href="/affiliate.ashx">affiliate</a>
+                    <span class="footer_dot"> • </span>
+                    <a class="tab-link" href="/advertise.ashx">advertise</a>
+                    <span class="footer_dot"> • </span>
+                    <a class="tab-link" href="/contact.ashx">contact</a>
+                    <span class="footer_dot"> • </span>
+                    <a class="tab-link" href="/privacy.ashx">privacy</a>
+                    <span class="footer_dot"> • </span>
+                    <a class="tab-link" href="/help/screener.ashx">help</a>
+                </div>
+                <span class="copyright">Quotes delayed 15 minutes for NASDAQ, and 20 minutes for NYSE and AMEX.</span>
+                <br>
+                Copyright © 2007-2019 FINVIZ.com. All Rights Reserved.</span>
+            </div>
+            <script type="text/javascript" src="/js/dist/runtime.bundle.js?rev=134"></script>
+            <script type="text/javascript" src="/js/dist/vendors.bundle.js?rev=134"></script>
+            <script type="text/javascript" src="/js/dist/header.bundle.js?rev=134"></script>
+        
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-3261808-1', 'auto', { sampleRate: 50 });
+                ga('set', 'dimension1', 'NotLoggedIn');
+                
+                ga('send', 'pageview');
+            </script>
+        <script type="text/javascript">
+_qoptions={qacct:"p-c2W8esUZ6Q8oA"};
+</script>
+<script type="text/javascript" src="https://secure.quantserve.com/quant.js"></script>
+<noscript>
+<img src="https://pixel.quantserve.com/pixel/p-c2W8esUZ6Q8oA.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+
+            <script type="text/javascript">
+                (function() {
+                    var bannerScript = document.createElement('script');
+                    
+                    if (document.body.clientWidth >= 1260) {
+                        bannerScript.onload = function () {
+                            var microbarScript = document.createElement('script');   microbarScript.src = '//ads.investingchannel.com/adtags/finviz/qtsearch/88x31.js?kval=qtsearch';
+                            var microbar = document.getElementById('microbar_position');
+                            microbar.appendChild(microbarScript);
+                            microbar.style.marginLeft = '6px';
+                        };
+                    }
+            bannerScript.onerror = function() {
+                var banners = ['2', '4', '5', '6', '7'];
+                var banner = banners[Math.floor(Math.random() * banners.length)];
+
+                if (typeof intICJsTile === 'undefined') {
+                    if (banner === '3') {
+                        document.getElementById('banner_position').innerHTML = '<iframe src="/img/a/' + banner + '/index.html?rev=2" frameBorder="0" width="728" height="90"></iframe>';
+                    } else {
+                        document.getElementById('banner_position').innerHTML = '<a href="/elite.ashx?utm_source=finviz&utm_medium=banner&utm_campaign=' + banner + '"><img src="/img/a/' + banner + '.jpg"></a>';
+                    }
+                    ga && ga('send', 'event', 'banner', 'impression', banner, {'nonInteraction': 1});
+                }
+            };
+        
+                    bannerScript.src = '//ads.investingchannel.com/adtags/finviz/news/728x90.js';
+                    var banner = document.getElementById('banner_position');
+                    banner.appendChild(bannerScript);
+
+                    function loadSkyscraper() {
+                        var clientWidth = document.body.clientWidth;
+                        if (clientWidth >= 1600) {
+                            var adSrcSmall = '//ads.investingchannel.com/adtags/finviz/futures/160x600.js';
+                            var adSrcLarge = '//ads.investingchannel.com/adtags/finviz/futures/300x250.js';
+                            var adSrc = clientWidth >= 1899 ? adSrcLarge : adSrcSmall;
+
+                            var skyscraperScript = document.createElement('script');
+                            skyscraperScript.onload = function () {
+                                var skyscraperScript = document.createElement('script');
+                                skyscraperScript.async = true;
+                                skyscraperScript.src = adSrc;
+                                var skyscraper = document.getElementById('skyscraper2_position');
+                                skyscraper.appendChild(skyscraperScript);
+                                skyscraper.style.display = 'block';
+                            };
+                            skyscraperScript.async = true;
+                            skyscraperScript.src = adSrc;
+                            var skyscraper = document.getElementById('skyscraper1_position');
+                            skyscraper.appendChild(skyscraperScript);
+                            skyscraper.style.display = 'block';
+                        }
+                    }
+                })();
+            </script>
+        <script type="text/javascript">function OnResize(){}window.onresize=OnResize;OnResize();</script>
+<div id="modal-elite-ad" class="modal-elite-ad">
+                            <div id="modal-elite-ad_content" class="modal-elite-ad_content">
+			                    <button id="modal-elite-ad-close" type="button" class="modal-elite-ad_close">×</button>
+                                
+                                <!--<div id="modal-elite-ad-content-0" style="display: none">
+			                        <h2>Ever heard of Finviz*Elite?</h2>
+                                    <p>
+                                        Our premium service offers you real-time quotes, advanced visualizations, technical studies, and much more.<br>
+                                        Become Elite and make informed financial decisions.
+                                    </p>
+                                    <a href="/elite.ashx?utm_source=finviz&utm_medium=banner&utm_campaign=modal-0" id="modal-elite-ad-btn-0" class="" target="_blank">Find out more</a>
+                                </div>-->
+
+                                <div id="modal-elite-ad-content-1" style="display: block">
+			                        <h2>Upgrade your FINVIZ experience</h2>
+                                    <p>
+                                        Join thousands of traders who make more informed decisions with&nbsp;our&nbsp;premium features.
+                                        Real-time quotes, advanced&nbsp;visualizations, backtesting, and much more.
+                                    </p>
+                                    <a href="/elite.ashx?utm_source=finviz&utm_medium=banner&utm_campaign=modal-1" id="modal-elite-ad-btn-1" class="modal-elite_button" target="_blank">Learn more about FINVIZ*Elite</a>
+                                </div>
+                            </div>
+                         </div><script src="/js/pv.js?rev=134" async></script><script src="/script/libs/bowser.min.js?rev=134" type="text/javascript"></script></body>
+</html>
