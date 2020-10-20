@@ -3,7 +3,10 @@ import time
 import os
 import glob
 import pandas as pd
+from urllib.request import Request, urlopen
 
+home = os.getenv("HOME")
+path = "./finviz-api/dailyreports"
 
 def scrap_finviz(strategyNum, *url):
     from urllib.request import urlopen
@@ -11,6 +14,7 @@ def scrap_finviz(strategyNum, *url):
     import pandas as pd
     from datetime import datetime
     import csv
+    import urllib
 
     start_time = time.time()
 
@@ -21,8 +25,11 @@ def scrap_finviz(strategyNum, *url):
     # else use default url
     else:
         # input hard coded url here
-        finviz_url = "https://finviz.com/screener.ashx?v=111&f=sh_curvol_o500,sh_price_u15&ft=4&o=-change"
-        page = urlopen(finviz_url)
+        # finviz_url = "https://elite.finviz.com/screener.ashx?v=111&f=sh_curvol_o200,sh_price_u15&ft=4&o=-change&ar=10"
+        finviz_url = "https://elite.finviz.com/screener.ashx?v=111&f=sh_curvol_o200,sh_price_u15&ft=4&o=-change&ar=10"
+        # finviz_url = "https://finviz.com/screener.ashx?v=111&f=sh_curvol_o500,sh_price_u15&ft=4&o=-change"
+        req = Request(finviz_url, headers={'User-Agent': 'Mozilla/5.0', 'username': '','password': ''})
+        page = urlopen(req)
 
     hasNextPage = True
     firstPage = True
@@ -34,7 +41,8 @@ def scrap_finviz(strategyNum, *url):
     while hasNextPage:
         if not firstPage:
             finviz_url += "&r=" + str(currentPageIndex)
-            page = urlopen(finviz_url)
+            req = Request(finviz_url, headers={'User-Agent': 'Mozilla/5.0'})
+            page = urlopen(req)
         soup = BeautifulSoup(page, "html.parser")
 
         # search all html lines containing table data about stock
@@ -80,22 +88,17 @@ def scrap_finviz(strategyNum, *url):
         return list_of_lists
 
     stock_data = helper(text_data)
+    stock_list = []
+    for stock in stock_data:
+        stock_list.append(stock[1])
+    print(stock_list[:10])
+    return stock_list[:10]
+    
 
-    # remove the numerical index from each list
-    for each_stock in stock_data:
-        del each_stock[0]
-
-    labels = ['Ticker', 'Company', 'Sector', 'Industry', 'Country', 'Market Cap', 'P/E', 'Price', '% Change', 'Volume']
-    df = pd.DataFrame.from_records(stock_data, columns=labels)
-    # date of retrieval
-    print(str(datetime.now()))
-    # time taken to retrieve data
-    print('Time taken to draw data: ' + str(round(time.time() - start_time, 2)) + ' seconds')
-    # save as csv file
-    df.to_csv('/Users/sn54430/finviz-api/twitter_feed/' + str(strategyNum) + '.csv', index=False)
-    return df
 
 timestr = time.strftime("%Y-%m-%d_%H%M")
+os.chdir(path)
+
 scrap_finviz(timestr)
 
 
